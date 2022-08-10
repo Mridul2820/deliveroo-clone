@@ -1,14 +1,21 @@
 import React from 'react';
-import {Text, View} from 'react-native';
 import {TailwindProvider} from 'tailwindcss-react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+import HomeScreen from './screens/HomeScreen';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <TailwindProvider>
-      <View>
-        <Text className="text-red-500 font-bold">Hey</Text>
-      </View>
-    </TailwindProvider>
+    <NavigationContainer>
+      <TailwindProvider>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={HomeScreen} />
+        </Stack.Navigator>
+      </TailwindProvider>
+    </NavigationContainer>
   );
 };
 
