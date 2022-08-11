@@ -47,7 +47,7 @@ const HomeScreen = () => {
           <AntDesign name="search1" size={28} color="#777" />
           <TextInput
             placeholder="Restaurants, Food"
-            className="text-xl font-bold text-black"
+            className="text-xl font-bold text-black flex-1"
             keyboardType="default"
           />
         </View>
