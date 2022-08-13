@@ -13,6 +13,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Categories from '../components/Categories';
+import FeaturedRow from '../components/FeaturedRow';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -58,6 +59,22 @@ const HomeScreen = () => {
         className="bg-gray-100"
         contentContainerStyle={{paddingBottom: 20}}>
         <Categories />
+
+        <FeaturedRow
+          id="1"
+          title="Featured"
+          description="Paid Promotion from our partners"
+        />
+        <FeaturedRow
+          id="2"
+          title="Tasty Discounts"
+          description="Everyday discounts on your favorite restaurants"
+        />
+        <FeaturedRow
+          id="3"
+          title="Offers near you"
+          description="We found some offers near you"
+        />
       </ScrollView>
     </SafeAreaView>
   );
