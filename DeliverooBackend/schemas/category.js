@@ -1,17 +1,21 @@
 export default {
-  name: 'category',
-  title: 'Category',
-  type: 'document',
+  name: "category",
+  title: "Menu Category",
+  type: "document",
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "name",
+      title: "Category Name",
+      type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'text',
+      name: "image",
+      title: "Image of Category",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
     },
   ],
-}
+};
