@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, ScrollView} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import ResturantCard from './ResturantCard';
 
 const FeaturedRow = ({id, title, description}) => {
   return (
@@ -15,8 +16,21 @@ const FeaturedRow = ({id, title, description}) => {
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{paddingHorizontal: 4}}
-        className="pt-4"></ScrollView>
+        contentContainerStyle={{paddingHorizontal: 16}}
+        className="pt-4">
+        <ResturantCard
+          id="1"
+          imgUrl="https://links.papareact.com/28w"
+          title="The Best Burgers"
+          rating={4.5}
+          genre="Burgers"
+          address="1000 W 4th St, Los Angeles, CA 90017"
+          shortDescription="Burgers, American, Fast Food"
+          dishes={[]}
+          long={-118.2437}
+          lat={34.0522}
+        />
+      </ScrollView>
     </View>
   );
 };
