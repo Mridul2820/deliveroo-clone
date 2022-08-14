@@ -76,7 +76,7 @@ const HomeScreen = () => {
 
       <ScrollView
         className="bg-gray-100"
-        contentContainerStyle={{paddingBottom: 20}}>
+        contentContainerStyle={{paddingBottom: 130}}>
         <Categories />
 
         {featuredRow.map(category => (
