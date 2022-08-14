@@ -15,6 +15,7 @@ const BasketIcon = () => {
     <View className="absolute bottom-6 left-4 right-4 w-[calc(100%-32px)] z-50">
       <TouchableOpacity
         className="p-4 rounded-lg flex-row items-center gap-x-1"
+        onPress={() => navigation.navigate('Basket')}
         style={{
           backgroundColor: colors.primary,
         }}>
