@@ -67,11 +67,13 @@ const DishRow = ({id, name, description, price, image}) => {
       {isPressed && (
         <View className="bg-white px-6 border-gray-200 border-b">
           <View className="flex-row items-center gap-x-2 pb-2">
-            <TouchableOpacity onPress={removeItemFromBasket}>
+            <TouchableOpacity
+              onPress={removeItemFromBasket}
+              disabled={!items.length > 0}>
               <Entypo
                 name="circle-with-minus"
                 size={28}
-                color="#00ccbb"
+                color={items.length > 0 ? '#00ccbb' : '#ccc'}
                 className="opacity-40"
               />
             </TouchableOpacity>
