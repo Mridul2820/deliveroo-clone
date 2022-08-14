@@ -5,6 +5,7 @@ import {urlFor} from '../sanity';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
+import DishRow from '../components/DishRow';
 
 const RestaurantScreen = () => {
   const navigation = useNavigation();
@@ -31,7 +32,7 @@ const RestaurantScreen = () => {
   } = useRoute();
 
   return (
-    <ScrollView>
+    <ScrollView className="text-black">
       <View className="relative">
         <Image
           source={{
@@ -80,6 +81,21 @@ const RestaurantScreen = () => {
           </Text>
           <Entypo name="chevron-right" size={20} color="#00ccbb" />
         </TouchableOpacity>
+      </View>
+
+      <View>
+        <Text className="px-4 pt-6 pb-4 font-bold text-xl">Menu</Text>
+
+        {dishes.map((dish, index) => (
+          <DishRow
+            key={index}
+            id={dish._id}
+            name={dish.name}
+            description={dish.short_description}
+            price={dish.price}
+            image={dish.image}
+          />
+        ))}
       </View>
     </ScrollView>
   );
