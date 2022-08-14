@@ -93,7 +93,7 @@ const RestaurantScreen = () => {
           </TouchableOpacity>
         </View>
 
-        <View>
+        <View className="pb-28">
           <Text className="px-4 pt-6 pb-4 font-bold text-xl">Menu</Text>
 
           {dishes.map((dish, index) => (
