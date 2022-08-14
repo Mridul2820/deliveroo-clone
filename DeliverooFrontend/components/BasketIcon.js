@@ -2,14 +2,17 @@ import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {useSelector} from 'react-redux';
-import {selectBasketItems, selectBasketTotal} from '../features/basketSlice';
 import Currency from 'react-currency-formatter';
+
+import {selectBasketItems, selectBasketTotal} from '../features/basketSlice';
 import {colors} from '../constants';
 
 const BasketIcon = () => {
   const items = useSelector(selectBasketItems);
   const navigation = useNavigation();
   const basketTotal = useSelector(selectBasketTotal);
+
+  if (items.length === 0) return null;
 
   return (
     <View className="absolute bottom-6 left-4 right-4 w-[calc(100%-32px)] z-50">

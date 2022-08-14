@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useEffect, useLayoutEffect} from 'react';
 import {View, Text, ScrollView, Image, TouchableOpacity} from 'react-native';
 
 import {useNavigation, useRoute} from '@react-navigation/native';
@@ -27,7 +27,7 @@ const RestaurantScreen = () => {
   const {
     params: {
       id,
-      imgUrl,
+      image,
       title,
       rating,
       genre,
@@ -43,7 +43,7 @@ const RestaurantScreen = () => {
     dispatch(
       setRestuarant({
         id,
-        imgUrl,
+        image,
         title,
         rating,
         genre,
@@ -63,7 +63,7 @@ const RestaurantScreen = () => {
         <View className="relative">
           <Image
             source={{
-              uri: urlFor(imgUrl).url(),
+              uri: urlFor(image).url(),
             }}
             className="w-full h-56 bg-gray-300 p-4"
           />

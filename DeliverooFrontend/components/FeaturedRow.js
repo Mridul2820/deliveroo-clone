@@ -23,7 +23,7 @@ const FeaturedRow = ({restaurants, title, description}) => {
             <ResturantCard
               key={restaurant._id + id}
               id={restaurant._id}
-              imgUrl={restaurant.image}
+              image={restaurant.image}
               title={restaurant.name}
               rating={restaurant.rating}
               genre={restaurant.genre}

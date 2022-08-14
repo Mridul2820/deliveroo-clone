@@ -2,12 +2,12 @@ import React from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import {urlFor} from '../sanity';
 
-const CategoryCard = ({title, imgUrl}) => {
+const CategoryCard = ({title, image}) => {
   return (
     <TouchableOpacity className="relative mr-2">
       <Image
         source={{
-          uri: urlFor(imgUrl).width(200).height(200).url(),
+          uri: urlFor(image).width(200).height(200).url(),
         }}
         className="w-20 h-20 rounded"
       />

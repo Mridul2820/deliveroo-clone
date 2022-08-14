@@ -8,7 +8,7 @@ import {colors} from '../constants';
 
 const ResturantCard = ({
   id,
-  imgUrl,
+  image,
   title,
   rating,
   genre,
@@ -25,7 +25,7 @@ const ResturantCard = ({
       onPress={() =>
         navigation.navigate('Restaurant', {
           id,
-          imgUrl,
+          image,
           title,
           rating,
           genre,
@@ -38,7 +38,7 @@ const ResturantCard = ({
       }>
       <Image
         source={{
-          uri: urlFor(imgUrl).width(200).height(200).url(),
+          uri: urlFor(image).width(200).height(200).url(),
         }}
         className="h-36 w-64 rounded-sm"
       />
