@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
+import {urlFor} from '../sanity';
 
 const ResturantCard = ({
   id,
@@ -12,14 +13,14 @@ const ResturantCard = ({
   address,
   shortDescription,
   dishes,
-  long,
-  lat,
+  latitude,
+  longitude,
 }) => {
   return (
     <TouchableOpacity className="bg-white mr-3 shadow-md">
       <Image
         source={{
-          uri: imgUrl,
+          uri: urlFor(imgUrl).width(200).height(200).url(),
         }}
         className="h-36 w-64 rounded-sm"
       />
