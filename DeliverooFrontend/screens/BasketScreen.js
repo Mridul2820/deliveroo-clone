@@ -40,7 +40,7 @@ const BasketScreen = () => {
   }, [items]);
 
   return (
-    <SafeAreaView className="bg-white flex-1">
+    <SafeAreaView className="bg-white flex-1 relative">
       <View className="bg-gray-100 flex-1">
         <View
           className="bg-white p-5 border-b shadow-sm"
@@ -55,8 +55,8 @@ const BasketScreen = () => {
           </View>
           <TouchableOpacity
             onPress={() => navigation.goBack()}
-            className="top-24 right-5">
-            <AntDesign name="closecircle" size={24} color="black" />
+            className="absolute top-4 right-4">
+            <AntDesign name="closecircle" size={25} color={colors.primary} />
           </TouchableOpacity>
         </View>
 

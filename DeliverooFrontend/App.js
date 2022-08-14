@@ -22,7 +22,7 @@ const App = () => {
             <Stack.Screen
               name="Basket"
               component={BasketScreen}
-              options={{presentation: 'containedModal'}}
+              options={{presentation: 'modal', headerShown: false}}
             />
           </Stack.Navigator>
         </TailwindProvider>
