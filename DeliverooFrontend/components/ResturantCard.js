@@ -4,6 +4,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {urlFor} from '../sanity';
 import {useNavigation} from '@react-navigation/native';
+import {colors} from '../constants';
 
 const ResturantCard = ({
   id,
@@ -44,7 +45,7 @@ const ResturantCard = ({
       <View className=" pb-4 px-3">
         <Text className="text-lg font-bold pt-2">{title}</Text>
         <View className="flex-row items-center gap-x-1">
-          <MaterialIcons name="star" size={20} color="#00ccbb" />
+          <MaterialIcons name="star" size={20} color={colors.primary} />
           <Text className="text-xs text-gray-500">
             <Text className="text-green-500">{rating}</Text> · {genre}
           </Text>

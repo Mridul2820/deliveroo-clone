@@ -15,6 +15,7 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Categories from '../components/Categories';
 import FeaturedRow from '../components/FeaturedRow';
 import sanityClient from '../sanity';
+import {colors} from '../constants';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -56,10 +57,10 @@ const HomeScreen = () => {
           <Text className="text-gray-400 font-bold text-xs">Deviver Now</Text>
           <Text className="font-bold text-xl text-black">
             Current Location{' '}
-            <Entypo name="chevron-down" size={20} color="#00ccbb" />
+            <Entypo name="chevron-down" size={20} color={colors.primary} />
           </Text>
         </View>
-        <AntDesign name="user" size={28} color="#00ccbb" />
+        <AntDesign name="user" size={28} color={colors.primary} />
       </View>
 
       <View className="flex-row items-center space-x-2 pb-2 mx-4">
@@ -71,7 +72,7 @@ const HomeScreen = () => {
             keyboardType="default"
           />
         </View>
-        <SimpleLineIcons name="equalizer" size={28} color="#00ccbb" />
+        <SimpleLineIcons name="equalizer" size={28} color={colors.primary} />
       </View>
 
       <ScrollView

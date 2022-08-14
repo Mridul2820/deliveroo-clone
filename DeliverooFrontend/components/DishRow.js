@@ -10,6 +10,7 @@ import {
   removefromBasket,
   selectBasketItemsWithId,
 } from '../features/basketSlice';
+import {colors} from '../constants';
 
 const DishRow = ({id, name, description, price, image}) => {
   const [isPressed, setIsPressed] = useState(false);
@@ -73,7 +74,7 @@ const DishRow = ({id, name, description, price, image}) => {
               <Entypo
                 name="circle-with-minus"
                 size={28}
-                color={items.length > 0 ? '#00ccbb' : '#ccc'}
+                color={items.length > 0 ? colors.primary : '#ccc'}
                 className="opacity-40"
               />
             </TouchableOpacity>
@@ -82,7 +83,7 @@ const DishRow = ({id, name, description, price, image}) => {
               <Entypo
                 name="circle-with-plus"
                 size={28}
-                color="#00ccbb"
+                color={colors.primary}
                 className="opacity-40"
               />
             </TouchableOpacity>
