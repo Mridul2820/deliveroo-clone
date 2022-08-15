@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, SafeAreaView, TouchableOpacity, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
+import MapView, {Marker} from 'react-native-maps';
 
 import * as Progress from 'react-native-progress';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -49,6 +50,43 @@ const DeliveryScreen = () => {
             Your order at {restaurant.name} is being prepared
           </Text>
         </View>
+      </SafeAreaView>
+      <MapView
+        initialRegion={{
+          latitude: parseFloat(restaurant.latitude),
+          longitude: parseFloat(restaurant.longitude),
+          latitudeDelta: 0.02,
+          longitudeDelta: 0.02,
+        }}
+        mapType="standard"
+        className="flex-1 -mt-10 z-0">
+        <Marker
+          coordinate={{
+            latitude: parseFloat(restaurant.latitude),
+            longitude: parseFloat(restaurant.longitude),
+          }}
+          title={restaurant.name}
+          description={restaurant.description}
+        />
+      </MapView>
+      <SafeAreaView className="bg-white flex-row items-center gap-x-4 h-24 px-5">
+        <Image
+          source={{
+            uri: 'https://randomuser.me/api/portraits/men/22.jpg',
+          }}
+          className="h-12 w-12 bg-gray-300 rounded-full"
+        />
+        <View className="flex-1">
+          <Text className="text-lg font-semibold">Rider Name</Text>
+          <Text className="text-gray-400">Your Rider</Text>
+        </View>
+        <Text
+          className="text-lg mr-5 font-bold"
+          style={{
+            color: colors.primary,
+          }}>
+          Call
+        </Text>
       </SafeAreaView>
     </View>
   );
