@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, ScrollView} from 'react-native';
+import {ScrollView} from 'react-native';
 import sanityClient from '../sanity';
 import CategoryCard from './CategoryCard';
 
@@ -7,7 +7,7 @@ const Categories = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    sanityClient.fetch(`*[_type == "category"]`).then(data => {
+    sanityClient.fetch('*[_type == "category"]').then(data => {
       setCategories(data);
     });
   }, []);

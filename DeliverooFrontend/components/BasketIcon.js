@@ -12,7 +12,9 @@ const BasketIcon = () => {
   const navigation = useNavigation();
   const basketTotal = useSelector(selectBasketTotal);
 
-  if (items.length === 0) return null;
+  if (items.length === 0) {
+    return null;
+  }
 
   return (
     <View className="absolute bottom-6 left-4 right-4 w-[calc(100%-32px)] z-50">

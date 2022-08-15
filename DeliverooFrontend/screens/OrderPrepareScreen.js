@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {View, Text, SafeAreaView} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import * as Animatable from 'react-native-animatable';
@@ -14,7 +14,7 @@ const OrderPrepareScreen = () => {
     setTimeout(() => {
       navigation.navigate('Delivery');
     }, 4000);
-  }, []);
+  }, [navigation]);
 
   return (
     <SafeAreaView

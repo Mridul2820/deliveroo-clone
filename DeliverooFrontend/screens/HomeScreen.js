@@ -1,7 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useLayoutEffect, useState} from 'react';
 import {
-  Button,
   Image,
   SafeAreaView,
   ScrollView,
@@ -25,7 +24,7 @@ const HomeScreen = () => {
     navigation.setOptions({
       headerShown: false,
     });
-  }, []);
+  }, [navigation]);
 
   useEffect(() => {
     sanityClient

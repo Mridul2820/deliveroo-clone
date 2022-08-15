@@ -22,7 +22,7 @@ const RestaurantScreen = () => {
     navigation.setOptions({
       headerShown: false,
     });
-  }, []);
+  }, [navigation]);
 
   const {
     params: {
@@ -54,6 +54,8 @@ const RestaurantScreen = () => {
         longitude,
       }),
     );
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   return (

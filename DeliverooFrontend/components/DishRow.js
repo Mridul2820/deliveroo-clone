@@ -31,7 +31,9 @@ const DishRow = ({id, name, description, price, image}) => {
   };
 
   const removeItemFromBasket = () => {
-    if (!items.length > 0) return;
+    if (!items.length > 0) {
+      return;
+    }
 
     dispatch(
       removefromBasket({

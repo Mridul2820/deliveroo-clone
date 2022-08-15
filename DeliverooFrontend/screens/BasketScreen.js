@@ -31,8 +31,8 @@ const BasketScreen = () => {
   const basketTotal = useSelector(selectBasketTotal);
 
   useEffect(() => {
-    const groupedItemsCart = items.reduce((results, items) => {
-      (results[items.id] = results[items.id] || []).push(items);
+    const groupedItemsCart = items.reduce((results, item) => {
+      (results[item.id] = results[item.id] || []).push(item);
       return results;
     }, {});
 
@@ -79,7 +79,7 @@ const BasketScreen = () => {
         </View>
 
         <ScrollView className="divide-y divide-gray-200">
-          {Object.entries(groupedItems).map(([key, items]) => (
+          {Object.entries(groupedItems).map(([key, item]) => (
             <View
               className="flex-row items-center gap-x-4 px-5 py-2 bg-white"
               key={key}>
@@ -87,17 +87,17 @@ const BasketScreen = () => {
                 style={{
                   color: colors.primary,
                 }}>
-                {items.length} x
+                {item.length} x
               </Text>
               <Image
                 source={{
-                  uri: urlFor(items[0]?.image).url(),
+                  uri: urlFor(item[0]?.image).url(),
                 }}
                 className="w-12 h-12 bg-gray-300 p-4 rounded-full"
               />
-              <Text className="flex-1">{items[0]?.name}</Text>
+              <Text className="flex-1">{item[0]?.name}</Text>
               <Text className="text-gray-600 font-bold">
-                <Currency quantity={items[0]?.price} currency="INR" />
+                <Currency quantity={item[0]?.price} currency="INR" />
               </Text>
               <TouchableOpacity
                 className="text-sm"
