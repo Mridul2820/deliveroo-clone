@@ -3,7 +3,7 @@ import {SafeAreaView} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import * as Animatable from 'react-native-animatable';
-import ProgressBar from 'react-native-progress/Bar';
+import * as Progress from 'react-native-progress';
 
 import {colors} from '../constants';
 
@@ -34,11 +34,11 @@ const OrderPrepareScreen = () => {
         className="text-lg text-center mb-8 text-white font-bold">
         Waiting for restaurant to accept your order
       </Animatable.Text>
-      <ProgressBar
+      <Progress.Bar
         progress={0.3}
         width={200}
         indeterminate={true}
-        color={colors.white}
+        color="white"
       />
     </SafeAreaView>
   );
