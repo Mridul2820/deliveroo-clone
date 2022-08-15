@@ -134,6 +134,7 @@ const BasketScreen = () => {
             style={{
               backgroundColor: colors.primary,
             }}
+            onPress={() => navigation.navigate('OrderPrepare')}
             className="px-5 py-3 rounded-md">
             <Text className="text-white text-center text-xl font-bold">
               Place Order
